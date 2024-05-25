@@ -45,3 +45,16 @@ def test_extract_no_files(tmpdir):
     empty_folder = tmpdir.mkdir("empty_folder")
     with pytest.raises(ValueError, match="No Excel files found"):
         extract_from_excel(str(empty_folder))   
+        
+def test_transform():
+    """Test the transformation of dataframes."""
+    data = [df1, df2]
+    consolidated_df = concat_data_frames(data)
+    assert len(consolidated_df) == 6  # 3 rows from df1 + 3 rows from df2
+    assert list(consolidated_df.columns) == ["A", "B"]
+    
+def test_transform_empty_list():
+    """Test the transformation functionality with an empty list."""
+    empty_list = []
+    with pytest.raises(ValueError, match="No data to transform"):
+        concat_data_frames(empty_list)
