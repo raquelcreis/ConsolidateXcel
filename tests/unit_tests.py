@@ -38,5 +38,10 @@ def test_extract(mock_input_folder):
     extracted_data = extract_from_excel(mock_input_folder)
     assert len(extracted_data) == 2  # Expecting two DataFrames
     assert all(isinstance(df, pd.DataFrame) for df in extracted_data)
-    
-    
+
+def test_extract_no_files(tmpdir):
+    """Test extraction functionality with an empty input folder."""
+    # Creating empty folder
+    empty_folder = tmpdir.mkdir("empty_folder")
+    with pytest.raises(ValueError, match="No Excel files found"):
+        extract_from_excel(str(empty_folder))   
