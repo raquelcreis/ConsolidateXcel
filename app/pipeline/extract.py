@@ -22,7 +22,7 @@ def extract_from_excel(path: str) -> List[pd.DataFrame]:
     """
     all_files = glob.glob(os.path.join(path, '*.xlsx'))
     if not all_files:
-        raise ValueError("No Excel files found in the specified folder")
+        raise ValueError('No Excel files found in the specified folder')
     data_frame_list = []
     for file in all_files:
         data_frame_list.append(pd.read_excel(file))
