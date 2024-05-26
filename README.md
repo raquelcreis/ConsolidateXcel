@@ -21,9 +21,9 @@ cd ConsolidateXcel
 pyenv install 3.11.7
 pyenv local 3.11.7
 ```
-3. Configure Poetry to use Python version 3.11.5 and activate the virtual environment
+3. Configure Poetry to use Python version 3.11.7 and activate the virtual environment
 ```
-poetry env use 3.11.5
+poetry env use 3.11.7
 poetry shell
 ```
 
@@ -66,10 +66,10 @@ Modify the config.json file to set the input and output directories:
 
 ## Example
 
-An example structure of the `input_files` directory:
+An example structure of the `input` directory:
 
 ```
-input_files/
+input/
     ├── data1.xlsx
     ├── data2.xlsx
     ├── data3.xlsx
