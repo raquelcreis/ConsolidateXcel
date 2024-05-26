@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "data-quality-workshop"
+name = "ConsolidateXcel"
 version = "0.1.0"
 description = "ETL project"
 authors = ["Raquel Reis <raquelreis233@gmail.com>"]
