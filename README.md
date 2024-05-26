@@ -1,5 +1,8 @@
 # ConsolidateXcel
 
+![consolidateXcel](https://github.com/raquelcreis/ConsolidateXcel/assets/64446494/57335bd3-c912-4819-b3d8-8a6901b5b5d3)
+
+
 ## Description
 ConsolidateXcel is a basic ETL (Extract, Transform, Load) project designed to automate the extraction of multiple Excel files, consolidate these files into a single cohesive dataset, and load the consolidated file into a new directory. This project simplifies data handling by integrating various Excel datasets into one, making data analysis and reporting more efficient.
 
