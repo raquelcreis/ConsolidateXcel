@@ -15,32 +15,27 @@ ConsolidateXcel is a basic ETL (Extract, Transform, Load) project designed to au
 ```
 git clone https://github.com/raquelcreis/ConsolidateXcel.git
 cd ConsolidateXcel
-
 ```
 2. Configure the correct Python version with pyenv
 ```
 pyenv install 3.11.7
 pyenv local 3.11.7
-
 ```
 3. Configure Poetry to use Python version 3.11.5 and activate the virtual environment
 ```
 poetry env use 3.11.5
 poetry shell
-
 ```
 
 4. Install the project dependencies
 ```
 poetry install
-
 ```
 
 5. Run the tests to ensure everything is working as expected
 
 ```
 task test
-
 ```
 
 6. Prepare your input files
@@ -51,7 +46,6 @@ Place all Excel files to be consolidated in the `input` directory
 
 ```
 task run
-
 ```
 
 8. Output
@@ -79,7 +73,6 @@ input_files/
     ├── data1.xlsx
     ├── data2.xlsx
     ├── data3.xlsx
-
 ```
 
 ## Contributing
