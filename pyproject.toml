@@ -28,3 +28,8 @@ known_third_party = []
 [tool.taskipy.tasks]
 
 format = "isort . && blue ."
+kill = "kill -9 $(lsof -t -i :8000)"
+test = "cd tests && pytest unit_tests.py -v"
+run = """
+python3 app/main.py
+"""

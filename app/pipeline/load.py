@@ -25,7 +25,5 @@ def load_excel(
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
-    data_frame.to_excel(
-        os.path.join(output_path, file_name), index=False
-    ) 
+    data_frame.to_excel(os.path.join(output_path, file_name), index=False)
     return 'File saved successfully'
