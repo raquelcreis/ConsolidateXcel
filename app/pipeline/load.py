@@ -14,7 +14,7 @@ def load_excel(
     Parameters:
     data_frame (pd.DataFrame): The DataFrame to be saved.
     output_path (str): The directory where the Excel file will be saved.
-    file_name (str): The name of the Excel file (without extension).
+    file_name (str): The name of the Excel file.
 
     Returns:
     str: A confirmation message indicating the file has been saved successfully.
@@ -25,5 +25,7 @@ def load_excel(
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
-    data_frame.to_excel(f'{output_path}/{file_name}.xlsx', index=False)
+    data_frame.to_excel(
+        os.path.join(output_path, file_name), index=False
+    ) 
     return 'File saved successfully'

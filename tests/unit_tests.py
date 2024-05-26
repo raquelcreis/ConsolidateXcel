@@ -58,3 +58,28 @@ def test_transform_empty_list():
     empty_list = []
     with pytest.raises(ValueError, match="No data to transform"):
         concat_data_frames(empty_list)
+        
+def test_load_no_permission(tmpdir):
+    """Test the load functionality with a protected output folder."""
+    # Assuming the folder doesn't have write permissions
+    protected_folder = tmpdir.mkdir("protected_folder")
+    os.chmod(str(protected_folder), 0o444)  # Read-only permissions
+
+    df = pd.DataFrame({"A": [1], "B": ["a"]})
+    with pytest.raises(PermissionError):
+        load_excel(df, str(protected_folder), "test.xlsx")
+        
+def test_load(mock_output_folder):
+    """Test the load functionality."""
+    df = pd.concat([df1, df2], axis=0, ignore_index=True)
+    output_file_name = "consolidated.xlsx"
+    load_excel(df, mock_output_folder, output_file_name)
+    assert os.path.exists(os.path.join(mock_output_folder, output_file_name))
+
+    # Verifying the contents of the loaded file
+    loaded_df = pd.read_excel(
+        os.path.join(mock_output_folder, output_file_name)
+    )  
+    pd.testing.assert_frame_equal(loaded_df, df)
+    
+    
