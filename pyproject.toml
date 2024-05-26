@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ConsolidateXcel"
 version = "0.1.0"
-description = "ETL project"
+description = "ConsolidateXcel is a basic ETL project that automates the extraction, consolidation, and loading of multiple Excel files into a single dataset, simplifying data handling and reporting."
 authors = ["Raquel Reis <raquelreis233@gmail.com>"]
 license = "MIT"
 readme = "README.md"

@@ -24,6 +24,11 @@ def consolidate_files():
     data_frame = concat_data_frames(data_frame_list)
     load_excel(data_frame, output_folder, output_file_name)
 
+    print("\n" + "="*20)
+    print("||  ConsolidateXcel  ||")
+    print("="*20 + "\n")
+    print("Files consolidated successfully! Output saved to:", os.path.join(output_folder, output_file_name))  
+
 
 if __name__ == '__main__':
     consolidate_files()
